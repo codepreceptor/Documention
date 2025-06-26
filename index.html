@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Login Guide</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      padding: 2rem;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    h2 {
+      margin-top: 1.5rem;
+      color: #34495e;
+    }
+    code {
+      background-color: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    ul {
+      margin-left: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🔐 How to Log In</h1>
+
+    <p>This page explains how a regular user can log in to the system to access the chatbot dashboard.</p>
+
+    <h2>📍 Login URL</h2>
+    <p>Send a <code>POST</code> request to: <strong><code>/login</code></strong></p>
+
+    <h2>📨 Required Form Fields</h2>
+    <ul>
+      <li><strong>Email or Username</strong>: <code>emailOrUsername</code></li>
+      <li><strong>Password</strong>: <code>password</code></li>
+    </ul>
+
+    <h2>🔁 Login Flow</h2>
+    <ol>
+      <li>User visits the <code>/login</code> page in the browser.</li>
+      <li>If the user is already logged in, they are automatically redirected to the <code>/dashboard</code>.</li>
+      <li>If not, the user fills out the login form with their credentials and submits it.</li>
+      <li>The system checks for too many failed login attempts from the same IP address.</li>
+      <li>If the credentials are valid, the user session starts and they are redirected to the dashboard.</li>
+      <li>If the credentials are incorrect, an error message is shown: <code>Invalid email/username or password.</code></li>
+    </ol>
+
+    <h2>⏱️ Login Rate Limiting</h2>
+    <p>To protect against brute-force attacks, the login route is limited to <strong>5 attempts per minute</strong> per IP address.</p>
+    <p>If exceeded, the system will display: <em>“Too many attempts. Wait for 5 mins.”</em></p>
+
+    <h2>✅ Successful Login</h2>
+    <p>Once logged in successfully, the system will track your IP address, browser info, operating system, and device name to enhance security.</p>
+
+    <ul>
+      <li>Create a document titled <code>How to Log In</code>.</li>
+      <li>Paste the content from this page.</li>
+      <li>Users can now ask the bot things like <em>"How do I log in?"</em> and get this guidance.</li>
+    </ul>
+  </div>
+
+  <footer>
+    &copy; 2025 | Simple Login Guide | Code Preceptor
+  </footer>
+
+</body>
+</html>
